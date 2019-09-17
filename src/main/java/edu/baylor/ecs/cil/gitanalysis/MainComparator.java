@@ -1,14 +1,16 @@
 package edu.baylor.ecs.cil.gitanalysis;
 
+import edu.baylor.ecs.cil.ccmm.actions.ControllerMethod;
 import edu.baylor.ecs.cil.gitanalysis.comparator.*;
 import edu.baylor.ecs.cil.ccmm.AstMesh;
 import edu.baylor.ecs.cil.ccmm.AstRoot;
 import edu.baylor.ecs.cil.ccmm.properties.MetaEntityMapping;
-import edu.baylor.ecs.cil.gitanalysis.model.CloneReason;
+import edu.baylor.ecs.cil.gitanalysis.clonereasons.CloneReason;
 import edu.baylor.ecs.cil.gitanalysis.model.CodeCloneList;
 import edu.baylor.ecs.cil.gitanalysis.model.CodeCloneMap;
 
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -25,6 +27,7 @@ public class MainComparator {
     public MainComparator(List<MetaEntityMapping> metaEntityMapping){
         this.metaEntityComparator = new MetaEntityComparator(metaEntityMapping);
         this.argumentsComparator = new ArgumentsComparator(this.metaEntityComparator);
+        this.databaseComparator = new DatabaseComparator();
 
     }
 
@@ -41,7 +44,7 @@ public class MainComparator {
                 AstRoot b = astRoots.get(j);
                 Set<CloneReason> cloneReasonsSet = getCloneReasons(a, b);
                 if (isSemanticClone(cloneReasonsSet)){
-                    codeCloneList.add(new CodeCloneMap(a, b));
+                    //codeCloneList.add(new CodeCloneMap(a, b));
                 }
             }
         }
@@ -54,13 +57,33 @@ public class MainComparator {
     }
 
     private Set<CloneReason> getCloneReasons(AstRoot a, AstRoot b) {
+
+        Set<CloneReason> cloneReasons = new HashSet<>();
+
+
+
+        return null;
+    }
+
+    // 1. controller
+        // arguments, return entity, security roles, http method
+    private Set<CloneReason> getControllerClones(ControllerMethod a, ControllerMethod b){
+        Set<CloneReason> cloneReasons = new HashSet<>();
+
+        if (this.argumentsComparator.compare(a.getArguments(), b.getArguments())) {
+            cloneReasons.add(CloneReason.ARGUMENT);
+        }
+
+        //if ()
+
+        this.returnEntityComparator.compare(a.getReturnEntity(), b.getReturnEntity());
+
+
+
         return null;
     }
 
 
-    // 1. controller
-
-        // arguments, return entity, security roles, http method
 
     // 2. database
 

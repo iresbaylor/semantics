@@ -1,4 +1,4 @@
-package edu.baylor.ecs.cil.gitanalysis.model;
+package edu.baylor.ecs.cil.gitanalysis.clonereasons;
 
 public enum CloneReason {
 
