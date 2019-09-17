@@ -1,24 +1,58 @@
+import comparator.*;
 import edu.baylor.ecs.cil.ccmm.AstMesh;
-import edu.baylor.ecs.cil.ccmm.actions.IBaseStatement;
+import edu.baylor.ecs.cil.ccmm.AstRoot;
+import edu.baylor.ecs.cil.ccmm.properties.MetaEntityMapping;
+import model.CloneReason;
 import model.CodeCloneList;
+import model.CodeCloneMap;
 
 import java.util.List;
+import java.util.Set;
 
 public class MainComparator {
 
+    private ArgumentsComparator argumentsComparator;
+    private DatabaseComparator databaseComparator;
+    private HttpMethodComparator httpMethodComparator;
+    private ReturnEntityComparator returnEntityComparator;
+    private SecurityRolesComparator securityRolesComparator;
+    private MetaEntityComparator metaEntityComparator;
+
+    public MainComparator(List<MetaEntityMapping> metaEntityMapping){
+        this.metaEntityComparator = new MetaEntityComparator(metaEntityMapping);
+        this.argumentsComparator = new ArgumentsComparator(this.metaEntityComparator);
+
+    }
 
     public CodeCloneList getCodeClones(AstMesh astMesh){
 
-        List<IBaseStatement> astRoots = astMesh.getAstRoots();
+        List<AstRoot> astRoots = astMesh.getAstRoots();
 
+        CodeCloneList codeCloneList = new CodeCloneList();
+
+        // compare one with the other
         for (int i = 0; i < astRoots.size(); i ++) {
-            for (int j = 0; j < astRoots.size(); j++){
-
+            for (int j = i; j < astRoots.size(); j++){
+                AstRoot a = astRoots.get(i);
+                AstRoot b = astRoots.get(j);
+                Set<CloneReason> cloneReasonsSet = getCloneReasons(a, b);
+                if (isSemanticClone(cloneReasonsSet)){
+                    codeCloneList.add(new CodeCloneMap(a, b));
+                }
             }
         }
 
-
+        return codeCloneList;
     }
+
+    private boolean isSemanticClone(Set<CloneReason> cloneReasonsSet) {
+        return false;
+    }
+
+    private Set<CloneReason> getCloneReasons(AstRoot a, AstRoot b) {
+        return null;
+    }
+
 
     // 1. controller
 

@@ -1,13 +1,17 @@
 package model;
 
 
-import edu.baylor.ecs.cil.ccmm.actions.IBaseStatement;
+import edu.baylor.ecs.cil.ccmm.AstRoot;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class CodeCloneMap {
 
-    private IBaseStatement codeCloneA;
-    private IBaseStatement codeCloneB;
+    private AstRoot codeCloneA;
+    private AstRoot codeCloneB;
+
+
 
 }

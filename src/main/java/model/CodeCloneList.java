@@ -8,4 +8,8 @@ import java.util.List;
 public class CodeCloneList {
 
     private List<CodeCloneMap> codeCloneMapList;
+
+    public void add(CodeCloneMap codeCloneMap){
+        this.codeCloneMapList.add(codeCloneMap);
+    }
 }
