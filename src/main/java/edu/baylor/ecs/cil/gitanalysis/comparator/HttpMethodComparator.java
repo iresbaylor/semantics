@@ -1,4 +1,4 @@
-package comparator;
+package edu.baylor.ecs.cil.gitanalysis.comparator;
 
 import edu.baylor.ecs.cil.ccmm.properties.HttpMethod;
 

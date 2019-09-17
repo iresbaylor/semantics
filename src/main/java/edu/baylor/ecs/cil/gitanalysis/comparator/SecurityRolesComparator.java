@@ -1,4 +1,4 @@
-package comparator;
+package edu.baylor.ecs.cil.gitanalysis.comparator;
 
 import java.util.List;
 

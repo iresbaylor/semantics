@@ -1,11 +1,11 @@
-package comparator;
+package edu.baylor.ecs.cil.gitanalysis.comparator;
 
 import edu.baylor.ecs.cil.ccmm.properties.MetaEntity;
 import edu.baylor.ecs.cil.ccmm.properties.MetaEntityMapping;
 
 import java.util.List;
 
-public class MetaEntityComparator implements IComparator{
+public class MetaEntityComparator{
 
     private List<MetaEntityMapping> metaEntityMappings;
 

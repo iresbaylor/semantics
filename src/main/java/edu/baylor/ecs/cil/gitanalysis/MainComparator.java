@@ -1,10 +1,13 @@
-import comparator.*;
+package edu.baylor.ecs.cil.gitanalysis;
+
+import edu.baylor.ecs.cil.gitanalysis.comparator.*;
 import edu.baylor.ecs.cil.ccmm.AstMesh;
 import edu.baylor.ecs.cil.ccmm.AstRoot;
 import edu.baylor.ecs.cil.ccmm.properties.MetaEntityMapping;
-import model.CloneReason;
-import model.CodeCloneList;
-import model.CodeCloneMap;
+import edu.baylor.ecs.cil.gitanalysis.model.CloneReason;
+import edu.baylor.ecs.cil.gitanalysis.model.CodeCloneList;
+import edu.baylor.ecs.cil.gitanalysis.model.CodeCloneMap;
+
 
 import java.util.List;
 import java.util.Set;
@@ -12,6 +15,7 @@ import java.util.Set;
 public class MainComparator {
 
     private ArgumentsComparator argumentsComparator;
+    //private ArgumentsComparator argumentsComparator;
     private DatabaseComparator databaseComparator;
     private HttpMethodComparator httpMethodComparator;
     private ReturnEntityComparator returnEntityComparator;

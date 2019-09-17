@@ -1,4 +1,4 @@
-package model;
+package edu.baylor.ecs.cil.gitanalysis.model;
 
 import lombok.Data;
 
