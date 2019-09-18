@@ -13,6 +13,4 @@ public class ArgumentClone {
         this.sameArguments = sameArguments;
         this.cloneReason = CloneReason.ARGUMENT;
     }
-
-
 }

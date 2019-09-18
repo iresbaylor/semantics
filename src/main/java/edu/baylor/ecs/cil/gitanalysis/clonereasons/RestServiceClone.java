@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class ServiceClone {
-
-    private List<MethodsClone> methodsClones;
+@AllArgsConstructor
+public class RestServiceClone {
+    private List<RestMethodsClone> methodsClones;
 }

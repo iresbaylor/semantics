@@ -100,7 +100,6 @@ public class MainComparator {
     // isomorphic
 
 
-
     // are arguments same -> 0 / 1
 
     // are methods type same -> 0 / 1

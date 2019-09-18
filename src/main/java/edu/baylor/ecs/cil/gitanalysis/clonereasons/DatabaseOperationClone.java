@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ContextClones {
-    private ControllerClone controllerClone;
-    //Database
+public class DatabaseOperationClone {
     private DatabaseOperation databaseOperation;
-    //Rest service
-    private RestServiceClone restServiceClone;
-    //Normal services
-    private ServiceClone serviceClone;
+    private CloneReason cloneReason;
+
+    public DatabaseOperationClone(DatabaseOperation databaseOperation){
+        this.databaseOperation = databaseOperation;
+        this.cloneReason = CloneReason.HTTP_METHOD;
+    }
 
 }
