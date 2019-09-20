@@ -28,7 +28,6 @@ public class MainComparator {
         this.metaEntityComparator = new MetaEntityComparator(metaEntityMapping);
         this.argumentsComparator = new ArgumentsComparator(this.metaEntityComparator);
         this.databaseComparator = new DatabaseComparator();
-
     }
 
     public CodeCloneList getCodeClones(AstMesh astMesh){
@@ -69,16 +68,11 @@ public class MainComparator {
         // arguments, return entity, security roles, http method
     private Set<CloneReason> getControllerClones(ControllerMethod a, ControllerMethod b){
         Set<CloneReason> cloneReasons = new HashSet<>();
-
         if (this.argumentsComparator.compare(a.getArguments(), b.getArguments())) {
             cloneReasons.add(CloneReason.ARGUMENT);
         }
-
         //if ()
-
         this.returnEntityComparator.compare(a.getReturnEntity(), b.getReturnEntity());
-
-
 
         return null;
     }
