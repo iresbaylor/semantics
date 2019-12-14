@@ -58,9 +58,7 @@ public class MainComparator {
     private Set<CloneReason> getCloneReasons(AstRoot a, AstRoot b) {
 
         Set<CloneReason> cloneReasons = new HashSet<>();
-
-
-
+        
         return null;
     }
 

@@ -2,5 +2,26 @@
 
 ## Description
 
-Maven project for analyzing the semantic context of git repository.
+Maven project for detecting semantic code clones.
+
+## Install
+
+```bash
+mvn clean install
+```
+
+## Run
+
+```bash
+mvn exec:java -Dexec.mainClass="Main"
+```
+
+## Test
+
+```bash
+mvn test
+```
+
+
+
 
